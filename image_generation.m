@@ -173,6 +173,16 @@ if ~exist(ScenarioAlpha_Path,'dir')
     mkdir(ScenarioAlpha_Path);
 end
 
+ScenarioBeta_Path_train_val='DL_input_data/ScenarioBeta/Sensor1/train_val';
+ScenarioBeta_Path_test='DL_input_data/ScenarioBeta/Sensor1/test';
+if ~exist(ScenarioBeta_Path_train_val,'dir')
+    mkdir(ScenarioBeta_Path_train_val);
+end
+
+if ~exist(ScenarioBeta_Path_test,'dir')
+    mkdir(ScenarioBeta_Path_test);
+end
+
 %%  Saving Images for Scenario Alpha Only for sensor 1, modify it if you want
 mmm=0;
 for k=1:1
@@ -194,4 +204,43 @@ for k=1:1
     end
 end
 
+%%  Saving Images for Scenario Beta Only for sensor 1, modify it if you want
+tic
+list=[1 2 4 5];
+mmm=0;
+for j=1:4
+    for i=1:n_classes
+        for z=1:size(Data3{i,j,k},2)
+            if i<10
+                DataFolder2=join([ScenarioBeta_Path_train_val,sprintf('/Classlabel_0%d',i)]);
+            else
+                DataFolder2=join([ScenarioBeta_Path_train_val,sprintf('/Classlabel_%d',i)]);
+            end
+            if ~exist(DataFolder2,'dir')
+                mkdir(DataFolder2);
+            end 
+            imwrite(images{1,list(j),i,z},join([DataFolder2,sprintf('/Sample_%d.jpg',mmm)]))
+            mmm=mmm+1;
+        end
+    end
+end
 
+
+mmm=0;
+for j=3:3  % Only 50% load for test data
+    for i=1:n_classes
+        for z=1:size(Data3{i,j,k},2)
+            if i<10
+                DataFolder2=join([ScenarioBeta_Path_test,sprintf('/Classlabel_0%d',i)]);
+            else
+                DataFolder2=join([ScenarioBeta_Path_test,sprintf('/Classlabel_%d',i)]);
+            end
+            if ~exist(DataFolder2,'dir')
+                mkdir(DataFolder2);
+            end 
+            imwrite(images{1,j,i,z},join([DataFolder2,sprintf('/Sample_%d.jpg',mmm)]))
+            mmm=mmm+1;
+        end
+    end
+end
+toc
