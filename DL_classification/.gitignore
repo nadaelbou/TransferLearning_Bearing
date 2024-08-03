@@ -1,2 +1,4 @@
 split_data/
 Valid_Test/
+__pycache__/
+models/

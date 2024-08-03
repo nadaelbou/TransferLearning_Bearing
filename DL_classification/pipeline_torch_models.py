@@ -145,17 +145,17 @@ class PipelineTorch():
         #print('\Accuracy: %2d%% (%2d/%2d)' % (100. * self.correct / self.total, self.correct, self.total))       
         return losses, average_loss, predictions, real_labels, acc
       
-    def load_checkpoint(self, version):
+    def load_checkpoint(self, version, nb_model):
         # Note: Input model & optimizer should be pre-defined.  This routine only updates their states.
-            print("=> loading checkpoint '{}'".format(os.path.join(self.artifact_path, f"model_{version}.pth")))
-            checkpoint=torch.load(os.path.join(self.artifact_path, f"model_{version}.pth"),map_location=self.device)
+            print("=> loading checkpoint '{}'".format(os.path.join(self.artifact_path, f"model{nb_model}_{version}.pth")))
+            checkpoint=torch.load(os.path.join(self.artifact_path, f"model{nb_model}_{version}.pth"),map_location=self.device)
             self.start_epoch = checkpoint['epoch']
             self.history=checkpoint['history']
             self.model.load_state_dict(checkpoint['state_dict'])
             self.optimizer.load_state_dict(checkpoint['optimizer'])
             self.scheduler.load_state_dict(checkpoint['scheduler'])
             print("=> loaded checkpoint '{}' (epoch {})"
-                      .format(os.path.join(self.artifact_path, f"model_{version}.pth"), checkpoint['epoch']))
+                      .format(os.path.join(self.artifact_path, f"model{nb_model}_{version}.pth"), checkpoint['epoch']))
          
     def __set_optimizer_transfer(self):
         params = [p for p in self.model.parameters() if p.requires_grad]

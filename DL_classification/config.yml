@@ -1,11 +1,11 @@
 model_config:
   batch_size: 32
-  n_epochs: 5
+  n_epochs: 25
   learning_rate: 0.001
-  early_stop_patience: 4
+  early_stop_patience: 5
   t_0: 10
   t_mult: 1
   eta_min: 0
   artifact_path: "models"
-  version: 'v1'
+  version: 'v7'
   initial_seed: 18
