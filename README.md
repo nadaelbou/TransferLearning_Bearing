@@ -11,10 +11,10 @@ The extraction method of the time-frequency representation (TFR) is also detaile
 ## Algorithms 
 In this folder, the following code can be found: 
 - image_generation.m (MATLAB): this file is used to generate TFR of current signals using a band-stop filter to filter out the fundamental as performed in the paper. 
-- pipeline.py: PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
-- train_run_model.ipynb: A Jupyter notebook which (1) splits the dataset into training, test and validation sets, (2) fine-tunes the CNN of choice detailed in pipeline.py, (3) saves the trained models into a .pth format, (4) print the accuracy of the model on the test set. 
-
-The codes have been run using an in-house university cluster of Aalto University, using a single GPU. 
+- pipeline.py (Python): PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
+- train_run_model.ipynb (Python): A Jupyter notebook which (1) splits the dataset into training, test and validation sets, (2) fine-tunes the CNN of choice detailed in pipeline.py, (3) saves the trained models into a .pth format, (4) print the accuracy of the model on the test set.
+  
+The Python code uses the PyTorch library. The codes have been run using an in-house university cluster of Aalto University, using a single GPU. 
 
 ## Installation
 To set up the required dependencies, run:
