@@ -26,6 +26,7 @@ pip install -r requirements.txt
 The codes were majorily written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi). 
 
 ## Citation 
+If you use this work in your research, please cite the following reference:
 ```
 N. E. Bouharrouti, A. N. Saberi, K. D. H. Khan, K. Kudelina, M. U. Naseer, and A. Belahcen, 
 "Deep Transfer Learning Approach Using Filtered Time-Frequency Representations of Current Signals for Bearing Fault Detection in Induction Machines," 
