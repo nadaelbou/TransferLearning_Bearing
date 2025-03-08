@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ```
 
 ## Contact
-The codes were majorily written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi). 
+The codes were majorily written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi).  
 
 ## Citation 
 If you use this work in your research, please cite the following reference:
