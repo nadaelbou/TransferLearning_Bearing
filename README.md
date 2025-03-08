@@ -16,6 +16,7 @@ In this folder, the following code can be found:
   ```
   Each extracted image correspond to a sample.
 - pipeline.py (Python): PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
+- config.yml (Python):  YAML configuration file used to store hyperparameters and settings for the ML models. 
 - train_run_model.ipynb (Python): A Jupyter notebook which (1) splits the dataset into training, test and validation sets, (2) fine-tunes the CNN of choice detailed in pipeline.py, (3) saves the trained models into a .pth format, (4) print the accuracy of the model on the test set.
   
 The Python code uses the PyTorch library. The codes have been run using an in-house university cluster of Aalto University, using a single GPU. 
@@ -25,7 +26,7 @@ To set up the required dependencies, run:
 ```
 pip install -r requirements.txt
 ```
-
+The dataset can be built using image_generation.m 
 ## Contact
 The codes were majorily written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi).  
 
