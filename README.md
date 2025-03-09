@@ -10,11 +10,7 @@ The extraction method of the time-frequency representation (TFR) is also detaile
 
 ## Algorithms 
 In this folder, the following code can be found: 
-- image_generation.m (MATLAB): this file is used to generate TFR of current signals using a band-stop filter to filter out the fundamental as performed in the paper. The generated images are saved in subdirectories under "cwt_generated_images", following this inscription (based on the number of sensor, loading level, class label):
-  ```
-  cwt_generated_images/Sensor_<sensor_number>/Loading_<loading_number>/Classlabel_<class_number>/Sample_<sample_number>.jpg
-  ```
-  Each extracted image correspond to a sample.
+- image_generation.m (MATLAB): this file is used to generate TFR of current signals using a band-stop filter to filter out the fundamental as performed in the paper. The generated images are saved in subdirectories under "cwt_generated_images", following the number of sensor, loading level, class label. Each extracted image correspond to a sample.
 
 Inside the DL_Classification folder, find all the codes on Python related to the deep neural networks fine tuning for classification purposes. 
 - pipeline_torch_models.py (Python): PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
