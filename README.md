@@ -15,20 +15,21 @@ In this folder, the following code can be found:
   cwt_generated_images/Sensor_<sensor_number>/Loading_<loading_number>/Classlabel_<class_number>/Sample_<sample_number>.jpg
   ```
   Each extracted image correspond to a sample.
-- pipeline.py (Python): PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
+
+Inside the DL_Classification folder, find all the codes on Python related to the deep neural networks fine tuning for classification purposes. 
+- pipeline_torch_models.py (Python): PipelineTorch has been built as Python class and implements a deep learning training and inference pipeline using PyTorch.
 - config.yml (Python):  YAML configuration file used to store hyperparameters and settings for the ML models. 
 - train_run_model.ipynb (Python): A Jupyter notebook which (1) splits the dataset into training, test and validation sets, (2) fine-tunes the CNN of choice detailed in pipeline.py, (3) saves the trained models into a .pth format, (4) print the accuracy of the model on the test set.
-  
-The Python code uses the PyTorch library. The codes have been run using an in-house university cluster of Aalto University, using a single GPU. 
+
+The dataset can be built using image_generation.m, which saves the time-frequency representation into folders. After that, simply run train_run_model.ipynb which calls pipeline_torch_models.py.
 
 ## Installation
 To set up the required dependencies, run:
 ```
 pip install -r requirements.txt
 ```
-The dataset can be built using image_generation.m 
 ## Contact
-The codes were majorily written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi).  
+The codes were initially written by Alireza Nemat Saberi and further extended by Nada El Bouharrouti (nada.elbouharrouti@aalto.fi).  
 
 ## Citation 
 If you use this work in your research, please cite the following reference:
